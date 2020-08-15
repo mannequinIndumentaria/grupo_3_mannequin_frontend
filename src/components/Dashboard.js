@@ -11,7 +11,8 @@ class Dashboard extends Component {
 		this.state = {
 			cantidadProductos: 0,
 			cantidadUsuarios: 0,
-			precioTotal: 0
+			precioTotal: 0,
+			mostrarCategories: []
 		}
 	}
 
@@ -23,40 +24,52 @@ class Dashboard extends Component {
 	}
 
 	mostrarProducto = (data) => {
-		console.log(data);
-		this.setState ({
+		
+		this.setState({
 			cantidadProductos: data.count
 		})
 	}
 
 	mostrarUsuarios = (data) => {
-		console.log(data);
-		this.setState ({
+		
+		this.setState({
 			cantidadUsuarios: data.count
 		})
 	}
 
-	/*precioTotal = (data) => {
-		console.log(data.rows)
-		var total = data.rows.reduce( (a,b) => {
-			b.precio + a
-		})
-		this.setState ({
+	precioTotal = (data) => {
+		var array = data.rows
+		
+		var total = array.reduce(function(a, b) {
+		
+		return parseFloat(b.price) + a;
+		},0)
+		
+		this.setState({
 			precioTotal: total
 		})
-	}*/
+	}
+
+	mostrarCategories = (data) => {
+		console.log(data);
+		this.setState({
+			mostrarCategories: data.rows
+		})
+	}
 
 	componentDidMount() {
 		this.apiCall("http://localhost:3000/api/products", this.mostrarProducto)
 		this.apiCall("http://localhost:3000/api/users", this.mostrarUsuarios)
-		/*this.apiCall("http://localhost:3000/api/products", this.precioTotal)*/
+		this.apiCall("http://localhost:3000/api/products", this.precioTotal)
+		this.apiCall("http://localhost:3000/api/categories", this.mostrarCategories)
+
 	}
 
 	render() {
 		return (
 			<div className="container-fluid">
 				<div className="d-sm-flex align-items-center justify-content-between mb-4">
-					<h1 className="h3 mb-0 text-gray-800">App Dashboard</h1>
+					<h1 className="h3 mb-0 text-gray-800">Mannequin Dashboard</h1>
 				</div>
 
 				<div className="row">
@@ -64,7 +77,7 @@ class Dashboard extends Component {
 						<CardIndividual bordeColor="border-left-primary" titleColor="text-primary" title="Products in Data Base" dato={this.state.cantidadProductos} icon="fa-clipboard-list" />
 					</div>
 					<div className="col-md-2 mb-4">
-						<CardIndividual bordeColor="border-left-success" titleColor="text-success" title="Amount in products" dato="$546.456" icon="fa-dollar-sign" />
+						<CardIndividual bordeColor="border-left-success" titleColor="text-success" title="Amount in products" dato={(this.state.precioTotal).toLocaleString()} icon="fa-dollar-sign" />
 					</div>
 					<div className="col-md-2 mb-4">
 						<CardIndividual bordeColor="border-left-warning" titleColor="text-warning" title="Users quantity" dato={this.state.cantidadUsuarios} icon="fa-user-check" />
@@ -76,7 +89,7 @@ class Dashboard extends Component {
 						<LastProduct />
 					</div>
 					<div className="col-lg-8 mb-4">
-						<Categories />
+						<Categories mostrarCategories={this.state.mostrarCategories}/>
 					</div>
 					<div className="col-lg-8 mb-4">
 						<Tabla />
