@@ -1,18 +1,28 @@
 import React from 'react';
 import foto from '../assets/images/product_dummy.svg';
-
-function LastProduct(){
+function LastProduct(props){
+    var producto = props.lastProduct[0]
+    var rutaFoto = foto
+    var nombre = ""
+    var rutaProducto = ""
+    if (typeof producto != "undefined"){
+        //console.log(producto.idproducts);
+        rutaFoto = 'http://localhost:3000/images/articulos/' + producto.images[0].file_name;
+        nombre = producto.name;
+        rutaProducto = 'http://localhost:3000/detalleProducto/' + producto.idproducts
+    }
+    
     return(
         <div className="card shadow mb-4">
             <div className="card-header py-3">
-                <h6 className="m-0 font-weight-bold text-primary">Last product in Data Dase</h6>
+                <h6 className="m-0 font-weight-bold text-primary">Último Producto</h6>
             </div>
             <div className="card-body">
                 <div className="text-center">
-                    <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" src={foto} alt="image dummy"/>
+                    <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" src={rutaFoto} alt="image dummy"/>
                 </div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, consequatur explicabo officia inventore libero veritatis iure voluptate reiciendis a magnam, vitae, aperiam voluptatum non corporis quae dolorem culpa exercitationem ratione?</p>
-                <a target="_blank" rel="nofollow" href="/">View product detail</a>
+                <p>{nombre}</p>
+                <a target="_blank" rel="nofollow" href={rutaProducto}>Ver detalle de producto</a>
             </div>
         </div>
     )
