@@ -11,7 +11,7 @@ function App() {
     <div id="wrapper">
       <Menu />
       <div id="content">
-        <BarraUser />
+        {/*<BarraUser />*/}
         <Dashboard />
         <Footer />
       </div>

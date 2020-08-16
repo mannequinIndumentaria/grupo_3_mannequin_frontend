@@ -12,11 +12,11 @@ function Menu(){
 		<hr className="sidebar-divider my-0"/>
         <MenuItem active="active" name="Dashboard" icon="fas fa-fw fa-tachometer-alt" />
 		<hr className="sidebar-divider"/>
-		<div className="sidebar-heading">Actions</div>
+		{/* <div className="sidebar-heading">Actions</div>
             <MenuItem active="" name="Pages" collapsed="collapsed" icon="fas fa-fw fa-folder" />
             <MenuItem active="" name="Charts" collapsed="" icon="fas fa-fw fa-chart-area" />
             <MenuItem active="" name="Tables" collapsed="collapsed" icon="fas fa-fw fa-table" />
-		<hr className="sidebar-divider d-none d-md-block"/>
+		<hr className="sidebar-divider d-none d-md-block"/> */}
 	</ul>
 
     )
