@@ -7,7 +7,11 @@ function LastProduct(props){
     var rutaProducto = ""
     if (typeof producto != "undefined"){
         //console.log(producto.idproducts);
-        rutaFoto = 'http://localhost:3000/images/articulos/' + producto.images[0].file_name;
+        if(typeof producto.images[0] != "undefined"){
+            rutaFoto = 'http://localhost:3000/images/articulos/' + producto.images[0].file_name;
+        }else{
+            rutaFoto = 'http://localhost:3000/images/otras/not_found.jpg';
+        }
         nombre = producto.name;
         rutaProducto = 'http://localhost:3000/detalleProducto/' + producto.idproducts
     }

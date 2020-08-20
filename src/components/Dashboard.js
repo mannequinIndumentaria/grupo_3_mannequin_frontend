@@ -19,6 +19,7 @@ class Dashboard extends Component {
 	}
 
 	apiCall(url, consecuencia) {
+		console.log("APICVALL")
 		fetch(url)
 			.then(response => response.json())
 			.then(data => consecuencia(data))
@@ -66,7 +67,7 @@ class Dashboard extends Component {
 	}
 
 	lastProduct = (data) => {
-		// console.log("Last Product ", data);
+		console.log("Last Product ", data);
 		this.setState({
 			lastProduct: data
 		})
