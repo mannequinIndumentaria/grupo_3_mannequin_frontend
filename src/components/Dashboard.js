@@ -101,13 +101,13 @@ class Dashboard extends Component {
 
 				<div className="row">
 					<div className="col-md-4 mb-4">
-						<CardIndividual bordeColor="border-left-primary" titleColor="text-primary" title="Total Productos" dato={this.state.cantidadProductos} icon="fa-clipboard-list" />
+						<CardIndividual bordeColor="border-left-primary" titleColor="text-primary" title="Total de productos" dato={this.state.cantidadProductos} icon="fa-clipboard-list" />
 					</div>
 					<div className="col-md-4 mb-4">
-						<CardIndividual bordeColor="border-left-success" titleColor="text-success" title="Total Categorías" dato={this.state.mostrarCategories.length} icon="fa-dollar-sign" />
+						<CardIndividual bordeColor="border-left-success" titleColor="text-success" title="Total de categorías" dato={this.state.mostrarCategories.length} icon="fa-th-large" />
 					</div>
 					<div className="col-md-4 mb-4">
-						<CardIndividual bordeColor="border-left-warning" titleColor="text-warning" title="Users quantity" dato={this.state.cantidadUsuarios} icon="fa-user-check" />
+						<CardIndividual bordeColor="border-left-warning" titleColor="text-warning" title="Total de usuarios" dato={this.state.cantidadUsuarios} icon="fa-user-check" />
 					</div>
 
 
