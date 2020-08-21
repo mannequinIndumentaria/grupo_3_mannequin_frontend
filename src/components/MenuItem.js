@@ -5,7 +5,7 @@ function MenuItem(proper){
     const colapsado = "nav-link "+ proper.collapsed;
     const type = proper.type;
     let estiloSpan = ""
-    if(type == "notification"){
+    if(type === "notification"){
         estiloSpan = "badge badge-danger badge-counter"
     }
     return(

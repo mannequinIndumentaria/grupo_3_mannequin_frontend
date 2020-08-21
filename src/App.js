@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Menu from './components/Menu';
-import BarraUser from './components/BarraUser';
+// import BarraUser from './components/BarraUser';
 import Dashboard from './components/Dashboard';
 import Footer from './components/Footer';
 

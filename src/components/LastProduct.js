@@ -23,10 +23,10 @@ function LastProduct(props){
             </div>
             <div className="card-body">
                 <div className="text-center">
-                    <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" src={rutaFoto} alt="image dummy"/>
+                    <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" src={rutaFoto} alt="dummy"/>
                 </div>
                 <p>{nombre}</p>
-                <a target="_blank" rel="nofollow" href={rutaProducto}>Ver detalle de producto</a>
+                <a target="_blank" rel="noopener noreferrer" href={rutaProducto}>Ver detalle de producto</a>
             </div>
         </div>
     )

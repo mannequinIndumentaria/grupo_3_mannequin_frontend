@@ -3,7 +3,7 @@ import CardIndividual from './CardIndividual'
 import LastProduct from './LastProduct'
 import Categories from './Categories'
 import Tabla from './Tabla'
-import { render } from '@testing-library/react';
+// import { render } from '@testing-library/react';
 
 class Dashboard extends Component {
 	constructor(props) {
