@@ -8,12 +8,12 @@ function LastProduct(props){
     if (typeof producto != "undefined"){
         //console.log(producto.idproducts);
         if(typeof producto.images[0] != "undefined"){
-            rutaFoto = 'http://localhost:3000/images/articulos/' + producto.images[0].file_name;
+            rutaFoto = 'https://mannequin-indumentaria.herokuapp.com/images/articulos/' + producto.images[0].file_name;
         }else{
-            rutaFoto = 'http://localhost:3000/images/otras/not_found.jpg';
+            rutaFoto = 'https://mannequin-indumentaria.herokuapp.com/images/otras/not_found.jpg';
         }
         nombre = producto.name;
-        rutaProducto = 'http://localhost:3000/detalleProducto/' + producto.idproducts
+        rutaProducto = 'https://mannequin-indumentaria.herokuapp.com/detalleProducto/' + producto.idproducts
     }
     
     return(
