@@ -84,10 +84,10 @@ class Dashboard extends Component {
 
 	componentDidMount() {
 
+		this.apiCall("https://mannequin-indumentaria.herokuapp.com/api/categories/withProducts", this.mostrarCategories)
 		this.apiCall("https://mannequin-indumentaria.herokuapp.com/api/products", this.mostrarProducto)
 		this.apiCall("https://mannequin-indumentaria.herokuapp.com/api/users", this.mostrarUsuarios)
 		this.apiCall("https://mannequin-indumentaria.herokuapp.com/api/products", this.precioTotal)
-		this.apiCall("https://mannequin-indumentaria.herokuapp.com/api/categories/withProducts", this.mostrarCategories)
 		this.apiCall("https://mannequin-indumentaria.herokuapp.com/api/products/lastProduct", this.lastProduct)
 
 	}
